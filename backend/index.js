@@ -28,8 +28,7 @@ app.use(bodyParser.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/blog", blogRoutes);
 
-app.get("/", function (req, res) {
-  res.cookie("cookie", "myCookie");
+app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
