@@ -34,12 +34,6 @@ app.use(
   })
 );
 
-// Your routes and other middleware
-app.post("/api/auth/login", (req, res) => {
-  // Your login logic
-  res.json({ success: true });
-});
-
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
