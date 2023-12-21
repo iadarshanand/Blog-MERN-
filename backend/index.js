@@ -15,14 +15,22 @@ mongoose
   .catch((error) => console.log(error));
 
 //middleware
+// app.use(
+//   cors({
+//     origin: [
+//       "https://blog-mern-x5as.vercel.app",
+//       "http://localhost:3000",
+//       "https://blog-mern-liart.vercel.app",
+//     ],
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
-    origin: [
-      "https://blog-mern-x5as.vercel.app",
-      "http://localhost:3000",
-      "https://blog-mern-liart.vercel.app",
-    ],
+    origin: "https://blog-mern-x5as.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
+    optionsSuccessStatus: 204, // Important for preflight requests
   })
 );
 app.use(express.json());
@@ -40,7 +48,7 @@ app.post("/cookie", (req, res) => {
   res.cookie("moye", "moye");
   res.send("Moye Moye");
 });
-
-app.listen(8000, () => {
+const port = process.env.PORT || 8000;
+app.listen(port, () => {
   console.log("Server is running at port 8000");
 });
