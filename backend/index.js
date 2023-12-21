@@ -10,12 +10,11 @@ const blogRoutes = require("./controller/blog");
 
 //connect mongoose
 mongoose
-  .connect("mongodb://127.0.0.1:27017/blog(MERN)")
+  .connect(process.env.MONGODB_URL)
   .then(() => console.log("DataBase connected successfully"))
   .catch((error) => console.log(error));
 
 //middleware
-
 app.use(
   cors({
     origin: "http://127.0.0.1:5173",
