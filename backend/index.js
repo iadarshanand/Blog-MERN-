@@ -33,16 +33,13 @@ app.use(
     optionsSuccessStatus: 204, // Important for preflight requests
   })
 );
-app.use(function (req, res, next) {
-  //Enabling CORS
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization"
-  );
-  next();
+
+// Your routes and other middleware
+app.post("/api/auth/login", (req, res) => {
+  // Your login logic
+  res.json({ success: true });
 });
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -54,11 +51,7 @@ app.get("/", (req, res) => {
   res.json("Hello World");
 });
 
-app.post("/cookie", (req, res) => {
-  res.cookie("moye", "moye");
-  res.send("Moye Moye");
-});
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
-  console.log("Server is running at port 8000");
+  console.log("Server is running at port", port);
 });
