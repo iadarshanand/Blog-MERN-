@@ -29,7 +29,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/blog", blogRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.json("Hello World");
 });
 
 app.post("/cookie", (req, res) => {
