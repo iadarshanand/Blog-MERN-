@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { URL } from "../../constant";
 import { useDispatch } from "react-redux";
-import { fetchUserFailure, fetchUserSuccess } from "../features/UserSlice";
+import { fetchUserFailure, fetchUserSuccess } from "../features/userSlice.js";
 
 const Login = () => {
   const navigate = useNavigate();

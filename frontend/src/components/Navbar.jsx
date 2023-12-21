@@ -4,7 +4,7 @@ import { IoMdSearch } from "react-icons/io";
 import Logo from "./Logo";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { fetchUserFailure, fetchUserSuccess } from "../features/UserSlice";
+import { fetchUserFailure, fetchUserSuccess } from "../features/userSlice.js";
 import { URL } from "../../constant";
 import Dropdown from "./DropDown";
 

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { URL } from "../../constant";
 import { useDispatch } from "react-redux";
-import { fetchUserLogout } from "../features/UserSlice";
+import { fetchUserLogout } from "../features/userSlice.js";
 
 const Dropdown = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
