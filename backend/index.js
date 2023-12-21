@@ -17,7 +17,11 @@ mongoose
 //middleware
 app.use(
   cors({
-    origin: ["https://blog-mern-x5as.vercel.app", "http://localhost:3000"],
+    origin: [
+      "https://blog-mern-x5as.vercel.app",
+      "http://localhost:3000",
+      "https://blog-mern-liart.vercel.app",
+    ],
     credentials: true,
   })
 );
